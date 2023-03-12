@@ -1,0 +1,29 @@
+aws:
+  accounts:
+    - account_id: "123456789012"
+      name: "Production"
+    - account_id: "987654321098"
+      name: "Development"
+  
+  regions:
+    - us-east-1
+    - us-west-2
+
+detection:
+  lookback_days: 30
+  threshold_std_dev: 2.5
+  minimum_cost_change: 100
+
+notifications:
+  slack:
+    enabled: true
+    webhook_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/URL"
+    channel: "#finops-alerts"
+  
+  email:
+    enabled: true
+    smtp_host: "smtp.gmail.com"
+    smtp_port: 587
+    from_email: "alerts@company.com"
+    to_emails:
+      - "finops-team@company.com"
